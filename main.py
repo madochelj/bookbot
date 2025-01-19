@@ -7,14 +7,12 @@ def main():
 def word_counter(data):
 
     words = data.split()
-    counter_dict = {}
+    counter_dict = {'p': 0, 'c': 0, ' ':0}
     character_list = []
 
-    for characters in words:
-        for character in characters:
-            character_list.append(character.lower())
-            counter_dict[character.lower()] = 0
-    
+    for num in range(0, len(data)):
+        character_list.append(data[num].lower())
+
     for letters in character_list:
         if letters in counter_dict:
             counter_dict[letters] += 1
