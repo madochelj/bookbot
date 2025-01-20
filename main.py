@@ -4,7 +4,6 @@ def main():
     
     dic_count = word_counter(file_contents)
     report(dic_count, file_contents)
-    print(dict_to_list_convert(dic_count))
 
 def word_counter(data):
 
@@ -26,13 +25,19 @@ def report(dic, data):
     print("--- Begin report of books/frankenstein.txt ---")
     words = data.split()
     word_count = len(words)
-    print(f"{word_count} words found in the document")
-    print("\n")
+    print(f"{word_count} words found in the document\n")
+    proper_list = dict_to_list_convert(dic)
+
+    for num in range(1, len(proper_list)):
+        temp_dict = proper_list[num]
+        if temp_dict["char"].isalpha():
+            print(f"The {temp_dict['char']} was found {temp_dict['Value']} times")
+    print("--- End report ---")
 
 # convert a dictionary into a list of dictionarys
 def dict_to_list_convert(dict):
     dtol = [{"char":k, "Value":v} for k,v in dict.items()]
-    dtol.sort(key=lambda dtol: dtol["Value"])
+    dtol.sort(key=lambda dtol: dtol["Value"], reverse=True)
     return dtol
 main()
 
