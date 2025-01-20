@@ -4,6 +4,7 @@ def main():
     
     dic_count = word_counter(file_contents)
     report(dic_count, file_contents)
+    print(dict_to_list_convert(dic_count))
 
 def word_counter(data):
 
@@ -27,5 +28,11 @@ def report(dic, data):
     word_count = len(words)
     print(f"{word_count} words found in the document")
     print("\n")
+
+# convert a dictionary into a list of dictionarys
+def dict_to_list_convert(dict):
+    dtol = [{"char":k, "Value":v} for k,v in dict.items()]
+    dtol.sort(key=lambda dtol: dtol["Value"])
+    return dtol
 main()
 
