@@ -3,7 +3,9 @@ def main():
         file_contents = txt.read()
     
     dic_count = word_counter(file_contents)
-    report(dic_count, file_contents)
+    #Thsi function is only here for the acitveity in boot.dev report function is more complete an functional
+    activity(dict_to_list_convert(word_counter(file_contents)))
+    #report(dic_count, file_contents)
 
 def word_counter(data):
 
@@ -39,5 +41,17 @@ def dict_to_list_convert(dict):
     dtol = [{"char":k, "Value":v} for k,v in dict.items()]
     dtol.sort(key=lambda dtol: dtol["Value"], reverse=True)
     return dtol
+
+def activity(data):
+    for entry in data:
+        if entry["char"] == 'e':
+            char = (entry["char"])
+            print(f"'{char}'")
+            print(entry["Value"])
+        if entry["char"] == 'n':
+            char2 = (entry["char"])
+            print(f"'{char2}'")
+            print(entry["Value"])
+
 main()
 
