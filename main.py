@@ -1,27 +1,13 @@
+from stats import word_counter
+
 def main():
     with open("books/frankenstein.txt") as txt:
         file_contents = txt.read()
     
     dic_count = word_counter(file_contents)
     #Thsi function is only here for the acitveity in boot.dev report function is more complete an functional
-    activity(dict_to_list_convert(word_counter(file_contents)))
+    #activity(dict_to_list_convert(word_counter(file_contents)))
     #report(dic_count, file_contents)
-
-def word_counter(data):
-
-    words = data.split()
-    counter_dict = {}
-    character_list = []
-
-    for num in range(0, len(data)):
-        character_list.append(data[num].lower())
-        counter_dict[data[num].lower()] = 0
-
-    for letters in character_list:
-        if letters in counter_dict:
-            counter_dict[letters] += 1
-
-    return counter_dict
 
 def report(dic, data):
     print("--- Begin report of books/frankenstein.txt ---")
