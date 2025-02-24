@@ -1,4 +1,3 @@
 # bookbot
-bookbot project created in python from boot.dev
 
-BookBot is my first project!
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
